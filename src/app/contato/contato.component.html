@@ -1,0 +1,7 @@
+
+<ul>
+    <li *ngFor="let contato of contatos" >
+        <a mdLine [routerLink]="['/conversa' , contato.id]"> <h4 md-line >{{contato.nome}}</h4> </a>
+    </li>
+</ul>
+

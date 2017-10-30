@@ -1,0 +1,12 @@
+<div>
+  <div>
+    <app-contato></app-contato>
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let conversa of conversas"> {{ conversa.mensagem }} </li>
+    </ul>
+    <input type="text" name="mensagem" [(ngModel)]="conversa.mensagem"/>
+    <button (click)="enviarMensagem()">Enviar</button>
+  </div>
+</div>
