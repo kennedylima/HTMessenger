@@ -1,3 +1,5 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialDesignModule } from './../material-design/material-design.module';
 import { ContatoService } from './../contato/contato.service';
 import { FormsModule } from '@angular/forms';
 import { ContatoModule } from './../contato/contato.module';
@@ -10,7 +12,9 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     ContatoModule,
-    FormsModule
+    FormsModule,
+    MaterialDesignModule,
+    FlexLayoutModule
   ],
   declarations: [
     ConversaComponent

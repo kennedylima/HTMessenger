@@ -1,12 +1,38 @@
-<div>
-  <div>
-    <app-contato></app-contato>
+<app-contato fxFlex="33"></app-contato>
+
+<div fxLayout="column" fxFlex fxFill >
+  <div fxLayout="column" >
+    <div fxLayout="column" *ngFor="let conversa of conversas"  fxFill>
+      
+      <mat-card *ngIf="conversa.usuarioOrigem.id == idUsuarioOrigem ">
+          <span fxFlex fxFill> </span>
+          <div fxLayout="column">
+            <span > {{conversa.mensagem}} </span>
+            <b > {{conversa.usuarioOrigem.nome}}</b>
+          </div>
+        </mat-card>
+       
+      <mat-card *ngIf=" conversa.usuarioOrigem.id == idUsuarioDestino ">
+        <div fxLayout="column">
+          <span > {{conversa.mensagem}} </span> 
+          <b > {{conversa.usuarioOrigem.nome}}</b>
+        </div>
+        <span fxFlex fxFill> </span>
+      </mat-card>
+      
+    </div>   
   </div>
-  <div>
-    <ul>
-      <li *ngFor="let conversa of conversas"> {{ conversa.mensagem }} </li>
-    </ul>
-    <input type="text" name="mensagem" [(ngModel)]="conversa.mensagem"/>
-    <button (click)="enviarMensagem()">Enviar</button>
+
+  <div fxFill  >
+    <mat-card fxLayout="row">
+      <mat-form-field class="example-full-width" fxFlex fxFill>
+          <textarea matInput placeholder="Mensagem" (keyup.enter)="enviarMensagem()" [(ngModel)]="conversa.mensagem"></textarea>
+      </mat-form-field>
+      
+      <button mat-icon-button style="padding-top: 10px">
+        <mat-icon class="mat-48" (click)="enviarMensagem()" >send</mat-icon>
+      </button>
+    </mat-card>
   </div>
+
 </div>

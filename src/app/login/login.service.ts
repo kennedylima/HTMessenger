@@ -17,12 +17,13 @@ export class LoginService {
       .toPromise()
       .then(dados => {
         this.usuarioOrigem = dados.json();
+        localStorage.setItem("id",this.usuarioOrigem.id.toString());
         this.route.navigate(['/conversa']);
       })
       .catch(() => alert('Usuário e senha não confere!'));
   }
 
   getUsuarioOrigem() {
-    return this.usuarioOrigem;
+        return this.usuarioOrigem;
   }
 }

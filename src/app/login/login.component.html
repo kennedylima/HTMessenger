@@ -1,10 +1,15 @@
-<div>
-
+<mat-card fxLayout="column" fxFlexAlign="center" fxFlex  >
   
-
-  Login: <input type="text" [(ngModel)]="usuario.login" >
-  Senha: <input type="password" [(ngModel)]="usuario.senha">
-
-  <button (click) = "logar()"> Entrar </button>
+  <img fxFlex fxFlexAlign="center" mat-card-image src="assets/image/logo-HTMessenger.svg">
   
-</div>
+  <mat-form-field >
+      <input matInput placeholder="Usuário" (keyup.enter)="logar()" [(ngModel)]="usuario.login" [required]="usuario.login" >
+  </mat-form-field>
+
+  <mat-form-field >
+    <input matInput type="password" placeholder="Senha" (keyup.enter)="logar()" [(ngModel)]="usuario.senha" [required]="usuario.senha">
+  </mat-form-field>
+    
+  <button mat-raised-button color="primary"  (click)="logar()" [disabled]=" usuario.login == null || usuario.senha == null" > Entrar </button>
+
+</mat-card>

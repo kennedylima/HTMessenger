@@ -1,7 +1,15 @@
-
-<ul>
-    <li *ngFor="let contato of contatos" >
-        <a mdLine [routerLink]="['/conversa' , contato.id]"> <h4 md-line >{{contato.nome}}</h4> </a>
-    </li>
-</ul>
-
+<mat-card fxLayout="row" fxFlexAlign="center" >
+    <div fxLayout="column">    
+      
+      <mat-list>
+        <h2 mat-header>Contatos</h2>
+        <div *ngFor="let contato of contatos"  >
+          <mat-list-item  *ngIf=" contato.id != idUsuarioOrigem " >
+              <mat-icon mat-list-icon >person</mat-icon>
+              <a matLine [routerLink]="['/conversa' , contato.id]"> <h4 mat-line >{{contato.nome}}</h4> </a>
+          </mat-list-item>
+        </div> 
+      </mat-list>
+  
+    </div>
+</mat-card>  

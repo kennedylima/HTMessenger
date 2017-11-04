@@ -17,10 +17,11 @@ export class ContatoComponent implements OnInit {
   ngOnInit() {}
 
   contatos: Usuario[];
+  idUsuarioOrigem: string;
   
   constructor(private contatoService : ContatoService, private http: Http ) {
     this.contatoService.getContatos().subscribe(dados => this.contatos = dados);
-    
+    this.idUsuarioOrigem = localStorage.getItem("id");
   }
   
   

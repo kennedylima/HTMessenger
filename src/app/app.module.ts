@@ -1,3 +1,5 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialDesignModule } from './material-design/material-design.module';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,13 +23,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule,
     HttpModule,
     RouterModule,
     ContatoModule,
     ConversaModule,
     LoginModule,
-    routing
+    routing,
+    BrowserAnimationsModule,
+    MaterialDesignModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
